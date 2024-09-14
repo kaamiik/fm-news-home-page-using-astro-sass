@@ -16,6 +16,7 @@ if (href) El = "a";
     justify-content: center;
     cursor: pointer;
     text-decoration: none;
+    letter-spacing: $button-letter-spacing;
     line-height: 1;
     font-family: $button-font-family;
     font-size: $button-font-size;
@@ -25,6 +26,7 @@ if (href) El = "a";
     border: $button-border;
     border-radius: $button-border-radius;
     transition: 275ms ease;
+    justify-self: start;
 
     &[data-type="primary"] {
       background-color: $button-primary-background;
@@ -36,14 +38,14 @@ if (href) El = "a";
       }
     }
 
-    &[data-type="accent"] {
-      background-color: $button-accent-background;
-      color: $button-accent-color;
+    // &[data-type="accent"] {
+    //   background-color: $button-accent-background;
+    //   color: $button-accent-color;
 
-      &:is(:hover, :focus) {
-        background-color: $button-accent-background-hover;
-        color: $button-accent-color-hover;
-      }
-    }
+    //   &:is(:hover, :focus) {
+    //     background-color: $button-accent-background-hover;
+    //     color: $button-accent-color-hover;
+    //   }
+    // }
   }
 </style>

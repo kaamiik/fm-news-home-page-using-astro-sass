@@ -1,0 +1,80 @@
+---
+
+---
+
+<section class="blog">
+  <article class="blog--post">
+    <img
+      src="/assets/images/image-retro-pcs.jpg"
+      alt="A nostalgic scene featuring various retro computing and gaming devices. The image includes an old personal computer with a monochrome monitor and keyboard, a vintage handheld game console, a classic joystick, and several audio cassette tapes. The scene is bathed in moody, neon lighting, creating a vibrant and atmospheric look reminiscent of the 1980s and early 1990s tech era."
+    />
+    <h3 class="heading-3">01</h3>
+    <h4 class="heading-5">
+      <a href="#">Reviving Retro PCs</a>
+    </h4>
+    <p>What happens when old PCs are given modern upgrades?</p>
+  </article>
+
+  <article class="blog--post">
+    <img
+      src="/assets/images/image-top-laptops.jpg"
+      alt="Close-up of a backlit mechanical keyboard with red illumination on the keys, showcasing a modern and sleek design."
+    />
+    <h3 class="heading-3">02</h3>
+    <h4 class="heading-5">
+      <a href="#">Top 10 Laptops of 2022</a>
+    </h4>
+    <p>Our best picks for various needs and budgets.</p>
+  </article>
+
+  <article class="blog--post">
+    <img
+      src="/assets/images/image-gaming-growth.jpg"
+      alt="A white gaming controller with black buttons and analog sticks is levitating above a person's open hand against a grey background."
+    />
+    <h3 class="heading-3">03</h3>
+    <h4 class="heading-5">
+      <a href="#">The Growth of Gaming</a>
+    </h4>
+    <p>How the pandemic has sparked fresh opportunities.</p>
+  </article>
+</section>
+
+<style lang="scss">
+  @use "../styles/abstracts/" as *;
+  .blog {
+    display: grid;
+    gap: $blog-gap;
+
+    @include mq(medium) {
+      padding-block-start: $blog-padding-block-start-desktop;
+      grid-template-columns: subgrid;
+      grid-template-rows: subgrid;
+      grid-column: 1 / -1;
+    }
+    & .blog--post {
+      display: grid;
+      column-gap: $blog-post-column-gap;
+      grid-template-columns: 6.25rem auto;
+      grid-template-rows: repeat(3, auto);
+    }
+  }
+
+  .blog--post {
+    & img {
+      grid-row: 1 / -1;
+    }
+
+    & h3 {
+      align-self: start;
+    }
+
+    & h4 {
+      align-self: center;
+    }
+
+    & p {
+      align-self: end;
+    }
+  }
+</style>

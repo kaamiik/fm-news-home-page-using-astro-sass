@@ -2,27 +2,138 @@
 
 ---
 
-<nav aria-label="primary navigation">
-  <ul class="nav | flex-group">
-    <li><a href="/index.html">Home</a></li>
-    <li><a href="#">Page 2</a></li>
-    <li><a href="#">Page 3</a></li>
-    <li><a href="#">Page 4</a></li>
-  </ul>
+<nav class="nav" aria-label="Site">
+  <button
+    class="nav--open js-btnOpen"
+    aria-expanded="false"
+    aria-labelledby="nav-label"
+  >
+    <span id="nav-label" class="visually-hidden">Navigation</span>
+    <svg
+      aria-hidden="true"
+      focusable="false"
+      width="40"
+      height="17"
+      xmlns="http://www.w3.org/2000/svg"
+      ><g fill="#00001A" fill-rule="evenodd"
+        ><path d="M0 0h40v3H0zM0 7h40v3H0zM0 14h40v3H0z"></path><path
+          d="M0 0h40v3H0z"></path></g
+      ></svg
+    >
+  </button>
+
+  <div class="nav--overlay" aria-hidden="true"></div>
+
+  <div class="nav--content" role="dialog" aria-labelledby="nav-label">
+    <button class="nav--close js-btnClose" aria-label="close">
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        width="32"
+        height="31"
+        xmlns="http://www.w3.org/2000/svg"
+        ><g fill="#00001A" fill-rule="evenodd"
+          ><path d="m2.919.297 28.284 28.284-2.122 2.122L.797 2.419z"
+          ></path><path d="M.797 28.581 29.081.297l2.122 2.122L2.919 30.703z"
+          ></path></g
+        ></svg
+      >
+    </button>
+    <ul class="nav--links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="#">New</a></li>
+      <li><a href="#">Popular</a></li>
+      <li><a href="#">Trending</a></li>
+      <li><a href="#">Categories</a></li>
+    </ul>
+  </div>
 </nav>
 
 <style lang="scss">
   @use "../styles/abstracts" as *;
-  .nav {
-    --flex-column-gap: #{$navigation-gap};
 
+  .nav {
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+
+      @include mq(medium) {
+        display: none;
+      }
+    }
+  }
+
+  .nav--open[aria-expanded="true"] {
+    ~ .nav--content {
+      translate: $navigation-content-hamburger-open-translate;
+
+      @media (prefers-reduced-motion) {
+        opacity: $navigation-content-prefers-reduced-motion-opacity;
+      }
+    }
+
+    ~ .nav--overlay {
+      opacity: $navigation-overlay-hamburger-open-opacity;
+    }
+  }
+
+  .nav--content {
+    @media (width <= 67em) {
+      display: none;
+      position: fixed;
+      inset: 0 0 0 7.5rem;
+      background-color: $navigation-content-hamburger-open-background-color;
+      padding: $navigation-content-hamburger-open-padding;
+      translate: $navigation-content-hamburger-close-translate;
+      transition: translate 500ms ease-in-out;
+    }
+
+    @media (prefers-reduced-motion) {
+      translate: $navigation-content-hamburger-open-translate;
+      opacity: $navigation-content-hamburger-open-opacity;
+      transition: translate 500ms ease-in-out;
+    }
+  }
+
+  .nav--close {
+    display: block;
+    margin-inline-start: $navigation-close-button-margin-inline-start;
+    margin-block-end: $navigation-close-button-margin-block-end;
+  }
+
+  .nav--overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: $navigation-overlay-background-color;
+    opacity: $navigation-overlay-hamburger-close-opacity;
+    transition: opacity 300ms ease-in-out;
+    pointer-events: none;
+  }
+
+  .nav--links {
     list-style: none;
     font-family: $navigation-font-family;
     font-weight: $navigation-font-weight;
+    display: flex;
+    flex-direction: column;
+    gap: $navigation-gap-hamburger;
+    @include mq(medium) {
+      flex-direction: row;
+      gap: $navigation-gap;
+    }
 
     a {
-      color: $navigation-color;
+      color: $navigation-color-hamburger;
+      font-size: $navigation-link-font-size-hamburger;
       text-decoration: $navigation-link-text-decoration;
+      line-height: $navigation-line-height;
+
+      @include mq(medium) {
+        color: $navigation-color;
+        font-size: $navigation-link-font-size;
+      }
 
       &:is(:hover, :focus) {
         color: $navigation-color-hover;

@@ -1,0 +1,59 @@
+---
+
+---
+
+<section class="new">
+  <h2 class="heading-2 margin-block-end-9">New</h2>
+
+  <article>
+    <h3 class="heading-4">
+      <a href="#">Hydrogen VS Electric Cars</a>
+    </h3>
+    <p class="margin-block-start-2">
+      Will hydrogen-fueled cars ever catch up to EVs?
+    </p>
+  </article>
+
+  <article>
+    <h3 class="heading-4">
+      <a href="#">The Downsides of AI Artistry</a>
+    </h3>
+    <p class="margin-block-start-2">
+      What are the possible adverse effects of on-demand AI image generation?
+    </p>
+  </article>
+
+  <article>
+    <h3 class="heading-4">
+      <a href="#">Is VC Funding Drying Up?</a>
+    </h3>
+    <p class="margin-block-start-2">
+      Private funding by VC firms is down 50% YOY. We take a look at what that
+      means.
+    </p>
+  </article>
+</section>
+
+<style lang="scss">
+  @use "../styles/abstracts/" as *;
+
+  .new {
+    background-color: $new-background-color;
+    color: $new-color;
+    padding: $new-padding-mobile;
+    @include mq(medium) {
+      padding: $new-padding-desktop;
+      grid-column: 3 / 4;
+      grid-row: 1 / 3;
+    }
+
+    & article:not(:last-of-type) {
+      padding-bottom: $new-padding-bottom-not-last-one;
+      border-bottom: $new-border-bottom-not-last-one;
+    }
+
+    & article:not(:first-of-type) {
+      padding-top: $new-padding-top-not-first-one;
+    }
+  }
+</style>

@@ -7,15 +7,15 @@ $enable-media-query-dark-mode: false;
 
 // Contextual
 $color-text-default: $color-neutral-700;
-$color-background-default: $color-primary-100;
-$color-text-interactive-default: $color-accent-400;
-$color-text-interactive-hover: $color-accent-500;
+$color-background-default: $color-neutral-100;
+$color-text-interactive-default: currentcolor;
+$color-text-interactive-hover: $color-primary-400;
 
 // set to 0 to disable
 $letter-spacing-loose: 0;
 
-$border-radius-1: $size-2;
-$border-radius-2: $size-4;
+$border-radius-1: 0;
+$border-radius-2: 0;
 
 $box-shadow-1: 0px 6px 5px rgb(0, 0, 0, 0.012),
   0px 22px 18px rgb(0, 0, 0, 0.018), 0px 100px 80px rgb(0, 0, 0, 0.03);
@@ -35,7 +35,7 @@ $box-shadow-5: 0px 6px 5px rgb(0, 0, 0, 0.04), 0px 22px 18px rgb(0, 0, 0, 0.06),
 // body
 $body-font-family: $font-family-base;
 $body-font-size: $font-size-400;
-$body-line-height: 1.5;
+$body-line-height: 1.7;
 $body-font-weight: $font-weight-default;
 $body-text-color: $color-text-default;
 $body-background-color: $color-background-default;
@@ -43,19 +43,23 @@ $body-background-color: $color-background-default;
 $link-color: $color-text-interactive-default;
 $link-color-hover: $color-text-interactive-hover;
 
-$heading-font-family: $font-family-accent;
+$heading-font-family: $font-family-base;
 $heading-color-default: $color-neutral-900;
-$heading-font-weight: $font-weight-bold;
+$heading-font-weight: $font-weight-extra-bold;
 $heading-letter-spacing: $letter-spacing-loose;
 $heading-line-height: 1.1;
-$heading-text-transform: uppercase;
+$heading-text-transform: none;
 
 $heading-1-font-size: $font-size-900;
 $heading-1-color: $heading-color-default;
 $heading-2-font-size: $font-size-800;
-$heading-2-color: $heading-color-default;
+$heading-2-color: $color-primary-500;
 $heading-3-font-size: $font-size-700;
-$heading-3-color: $heading-color-default;
+$heading-3-color: $color-primary-400;
+$heading-4-font-size: $font-size-600;
+$heading-4-color: $color-neutral-100;
+$heading-5-font-size: $font-size-500;
+$heading-5-color: $heading-color-default;
 
 // layout
 $grid-gap: $size-6;
@@ -65,94 +69,129 @@ $hero-padding-block: clamp(15rem, 15vh, 20rem);
 $section-padding-block: clamp(5rem, 10vh, 6rem);
 
 $container-min-margin-inline: $size-4;
-$container-max-width: 64rem;
+$container-max-width: 69.375rem;
 $container-max-width-narrow: 40rem;
 $container-max-width-wide: 75rem;
 
 // site header
-$site-header-background-color: $color-primary-300;
-$site-header-color: $color-neutral-900;
+$site-header-background-color: transparent;
+$site-header-color: $body-text-color;
 $site-header-padding: $size-8 0;
+$site-header-padding-desktop: $size-21 0 $size-14;
 $site-header-margin: 0;
-$site-header-jusitifcation-small-screens: center;
+$site-header-jusitifcation-small-screens: space-between;
 $site-header-jusitifcation-large-screens: space-between;
 $site-header-alignment: center;
 
 // // skip navigation
-$skip-nav-color: $color-neutral-100;
-$skip-nav-background-color: $color-primary-500;
-$skip-nav-padding: $size-4 $size-8;
-$skip-nav-outline-color: $color-accent-400;
-$skip-nav-outline-size: 2px;
-$skip-nav-outline-offset: 3px;
-$skip-nav-position: center;
+// $skip-nav-color: $color-neutral-100;
+// $skip-nav-background-color: $color-primary-500;
+// $skip-nav-padding: $size-4 $size-8;
+// $skip-nav-outline-color: $color-accent-400;
+// $skip-nav-outline-size: 2px;
+// $skip-nav-outline-offset: 3px;
+// $skip-nav-position: center;
 
 //navigation
+$navigation-color-hamburger: $color-neutral-900;
+$navigation-link-font-size-hamburger: $font-size-500;
 $navigation-color: $site-header-color;
-$navigation-color-hover: $color-accent-700;
-$navigation-font-size: $font-size-400;
-$navigation-gap: $size-9;
+$navigation-color-hover: $color-text-interactive-hover;
+$navigation-link-font-size: $font-size-400;
+$navigation-gap: $size-10;
+$navigation-gap-hamburger: $size-6;
 $navigation-link-text-decoration: none;
+$navigation-line-height: 1.3;
 $navigation-font-family: $body-font-family;
 $navigation-font-weight: $body-font-weight;
 
+$navigation-content-hamburger-open-translate: 0;
+$navigation-content-prefers-reduced-motion-opacity: 1;
+$navigation-overlay-hamburger-open-opacity: 0.5;
+$navigation-content-hamburger-open-background-color: $color-neutral-100;
+$navigation-content-hamburger-open-padding: $size-8;
+$navigation-content-hamburger-close-translate: 100vw 0;
+$navigation-content-hamburger-open-translate: 0;
+$navigation-content-hamburger-open-opacity: 0;
+$navigation-close-button-margin-inline-start: auto;
+$navigation-close-button-margin-block-end: $size-21;
+$navigation-overlay-background-color: $color-neutral-900;
+$navigation-overlay-hamburger-close-opacity: 0;
+
 // site footer
-$footer-background-color: $color-primary-300;
-$footer-text-color: $color-primary-900;
-$footer-link-color: $color-neutral-100;
-$footer-link-color-hover: $color-primary-200;
-$footer-link-font-family: $font-family-accent;
+$footer-background-color: $color-neutral-100;
+$footer-font-size: $font-size-200;
+$footer-text-color: $color-neutral-900;
+$footer-link-color: $color-primary-400;
+$footer-link-color-hover: $color-primary-500;
+$footer-link-font-family: $font-family-base;
 $footer-link-text-decoration: none;
 
 // buttons
 $button-font-family: $body-font-family;
-$button-font-size: $font-size-400;
+$button-font-size: $font-size-300;
 $button-font-weight: $font-weight-bold;
 $button-text-transform: uppercase;
-$button-padding: 0.75em 2em;
+$button-letter-spacing: 4.38px;
+$button-padding: 1.22em 2.22em;
 $button-border: 0;
 $button-border-radius: $border-radius-1;
 
-$button-accent-color: $color-neutral-100;
-$button-accent-background: $color-accent-400;
-$button-accent-color-hover: $color-neutral-100;
-$button-accent-background-hover: $color-accent-500;
-$button-primary-color: $color-neutral-100;
-$button-primary-background: $color-primary-700;
+// $button-accent-color: $color-neutral-100;
+// $button-accent-background: $color-accent-400;
+// $button-accent-color-hover: $color-neutral-100;
+// $button-accent-background-hover: $color-accent-500;
+$button-primary-color: $color-neutral-900;
+$button-primary-background: $color-primary-400;
 $button-primary-color-hover: $color-neutral-100;
-$button-primary-background-hover: $color-primary-800;
+$button-primary-background-hover: $color-neutral-900;
 
 // cards
-$card-flow-spacing: $size-2;
-$card-padding: $size-8;
-$card-shadow: $box-shadow-1;
-$card-border-radius: $border-radius-2;
-$card-background-default: $color-primary-100;
-$card-color-default: $body-text-color;
-$card-font-family: $body-font-family;
-$card-line-height: 1.25;
-$card-heading-color-default: $card-color-default;
-$card-heading-font-size: $font-size-600;
+// $card-flow-spacing: $size-2;
+// $card-padding: $size-8;
+// $card-shadow: $box-shadow-1;
+// $card-border-radius: $border-radius-2;
+// $card-background-default: $color-primary-100;
+// $card-color-default: $body-text-color;
+// $card-font-family: $body-font-family;
+// $card-line-height: 1.25;
+// $card-heading-color-default: $card-color-default;
+// $card-heading-font-size: $font-size-600;
 
 // forms
-$form-label-color: $body-text-color;
-$form-label-font-family: $body-font-family;
-$form-label-font-weight: $font-weight-bold;
-$form-label-font-size: $body-font-size;
+// $form-label-color: $body-text-color;
+// $form-label-font-family: $body-font-family;
+// $form-label-font-weight: $font-weight-bold;
+// $form-label-font-size: $body-font-size;
 
-$form-input-color: $body-text-color;
-$form-input-font-family: $body-font-family;
-$form-input-font-weight: $font-weight-semi-bold;
-$form-input-font-size: $body-font-size;
-$form-input-background-color: $color-neutral-100;
-$form-input-border-default: 3px solid $color-primary-200;
-$form-input-border-focus: 3px solid $color-primary-400;
-$form-input-padding: $size-3;
-$form-input-border-radius: $border-radius-1;
+// $form-input-color: $body-text-color;
+// $form-input-font-family: $body-font-family;
+// $form-input-font-weight: $font-weight-semi-bold;
+// $form-input-font-size: $body-font-size;
+// $form-input-background-color: $color-neutral-100;
+// $form-input-border-default: 3px solid $color-primary-200;
+// $form-input-border-focus: 3px solid $color-primary-400;
+// $form-input-padding: $size-3;
+// $form-input-border-radius: $border-radius-1;
 
-$form-placeholder-color: $color-primary-300;
-$form-placeholder-font-family: $form-input-font-family;
-$form-placeholder-font-weight: $form-input-font-weight;
-$form-placeholder-font-size: $body-font-size;
+// $form-placeholder-color: $color-primary-300;
+// $form-placeholder-font-family: $form-input-font-family;
+// $form-placeholder-font-weight: $form-input-font-weight;
+// $form-placeholder-font-size: $body-font-size;
 
-$form-group-spacing: 0.5rem;
+// $form-group-spacing: 0.5rem;
+
+$feature-gap-mobile: $size-6;
+$feature-gap-desktop: $size-7 $size-8;
+
+$new-background-color: $color-neutral-900;
+$new-color: $color-neutral-400;
+$new-padding-mobile: $size-6 $size-5;
+$new-padding-desktop: $size-8 $size-6;
+$new-padding-bottom-not-last-one: $size-7;
+$new-border-bottom-not-last-one: 1px solid #5e607a;
+$new-padding-top-not-first-one: $size-8;
+
+$blog-gap: $size-8;
+$blog-padding-block-start-desktop: $size-10;
+$blog-post-column-gap: $size-6;

@@ -1,0 +1,12 @@
+@use "../abstracts/" as *;
+
+.grid {
+  display: grid;
+  gap: $size-16;
+
+  @include mq(medium) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 18.75rem auto auto;
+    gap: $size-8;
+  }
+}

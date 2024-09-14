@@ -7,6 +7,21 @@ body {
   color: $body-text-color;
   background-color: $body-background-color;
   line-height: $body-line-height;
+
+  display: flex;
+  flex-direction: column;
+}
+
+body:has(.nav--open[aria-expanded="true"]) {
+  overflow-y: hidden;
+}
+
+main > .container {
+  padding-block-end: $size-15;
+
+  @include mq(medium) {
+    padding-block-end: $size-23;
+  }
 }
 
 a {

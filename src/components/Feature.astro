@@ -39,6 +39,11 @@ import Button from "./Button.astro";
       gap: $feature-gap-desktop;
     }
 
+    & h1 {
+      order: -1;
+      grid-row: 2;
+    }
+
     & picture {
       @include mq(medium) {
         grid-column: 1 / 3;
